@@ -271,6 +271,7 @@ opcode_t generate(instruction_t i, char* filename)
     else{ // invalid operation structure
       fprintf(stderr, ERROR_FORMAT, filename, i.tokens[1].line, i.tokens[1].col, INVALID_COMP_ERROR);
       exit(1);
+      break;
     }
   case TokenAdd:
     if(strncmp(i.tokens[1].data, "I", 1) == 0 &&
