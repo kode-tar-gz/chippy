@@ -22,10 +22,8 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <string.h>
-#include <errno.h>
 #include <time.h>
 #include <ctype.h>
-#include <assert.h>
 
 #include "raylib.h"
 #include "font.h"
@@ -177,7 +175,7 @@ int main(int argc, char **argv)
 	if(regs[op.x] != regs[op.y]) PC += 2;
 	break;
       case 0xA:
-	I = op.address;
+	I = mem[op.address];
 	break;
       case 0xB:
 	PC = regs[0] + op.address;

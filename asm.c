@@ -428,7 +428,7 @@ int main(int argc, char **argv)
 	  fprintf(stderr, "Value of %s: %d.\n", tok.data, tok.kind == TokenConst ? str_to_hex(&tok.data[1], 0) : str_to_hex(tok.data, 0));
 	}
       }
-      fprintf(stderr, "Opcode: %#X\n", op);
+      fprintf(stderr, "Opcode: %#X\n", op.raw);
       fprintf(stderr, "}\n");
     }
     write_be16(rom_f, op.raw);
